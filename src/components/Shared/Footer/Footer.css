@@ -1,0 +1,63 @@
+.footer-section {
+  margin-top: 140px;
+  background-image: url("./../../../images/footer/footer_Img_1.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+.footer-section .footer-info h2 {
+  font-weight: normal;
+  color: #000000;
+  margin-bottom: 40px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.footer-section p {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.5);
+}
+.footer-social li {
+  list-style: none;
+  margin: 0 10px 0 0;
+  display: inline-block;
+}
+.footer-section .footer-info ul li a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+}
+.footer-social li a {
+  height: 40px;
+  width: 40px;
+  display: block;
+  float: left;
+  color: #fa5624;
+  border-radius: 50%;
+  position: relative;
+  background: #fa5624;
+}
+.footer-social li a span {
+  position: absolute;
+  font-size: 18px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff !important;
+}
+.block ul {
+  padding: 0;
+}
+.block ul li,
+.block ul li > a {
+  display: table;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+.block ul li span .icon {
+  width: 40px;
+  font-size: 18px;
+  padding-top: 2px;
+  color: #fa5624 !important;
+}

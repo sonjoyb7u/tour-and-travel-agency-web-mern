@@ -1,0 +1,20 @@
+.contact-btn {
+  background-color: #fa5624 !important;
+  color: #fff;
+  display: inline-block;
+  padding: 13px 39px;
+  font-size: 16px;
+  font-weight: 500;
+  border: 0;
+  border-radius: 5px;
+  text-align: center;
+  text-transform: capitalize;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.contact-section .contact-form {
+  width: 100%;
+}
+.form-group {
+  margin-bottom: 1 rem;
+}

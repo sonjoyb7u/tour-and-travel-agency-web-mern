@@ -1,0 +1,28 @@
+.category-area {
+  margin-top: 150px;
+  /* position: relative;
+  z-index: 9; */
+}
+.all-catagories {
+  /* position: relative;
+  top: -50%;
+  z-index: 15; */
+}
+.single-category-area {
+  background-color: #fa5624;
+  text-align: center;
+  padding: 70px 10px;
+  border-radius: 5px;
+  transition-duration: 500ms;
+}
+.single-category-area:hover {
+  box-shadow: 0 5px 30px #fa5624;
+}
+.single-category-area .category-content img {
+  margin-bottom: 20px;
+}
+.single-category-area .category-content a,
+h6 {
+  text-decoration: none;
+  color: #fff;
+}
