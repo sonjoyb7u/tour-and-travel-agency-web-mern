@@ -1,6 +1,6 @@
 .book-tour-section {
-  width: 100%;
-  margin-top: 140px;
+  /* width: 100%; */
+  margin-top: 130px;
 }
 .book-tour-section .book-tour-heading {
   font-size: 35px;
@@ -100,7 +100,9 @@
   cursor: pointer;
 }
 .book-tour-section .all-book-tour-btn {
-  margin-top: 40px;
+  width: 25%;
+  display: block;
+  margin: 40px auto 0;
   background: #fa5624;
   color: #fff;
   padding: 13px 39px;
@@ -112,6 +114,7 @@
   text-transform: capitalize;
   transition: 0.3s;
   cursor: pointer;
+  text-decoration: none;
 }
 .book-tour-section .all-book-tour-btn:hover {
   background: #fa5624;

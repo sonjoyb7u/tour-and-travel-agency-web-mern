@@ -1,6 +1,6 @@
 import initializeAuthentication from "../components/Login/Firebase/firebase.init";
-import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, updateProfile, sendEmailVerification, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendPasswordResetEmail } from "firebase/auth";
 import { useEffect, useState } from "react";
+import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, updateProfile, sendEmailVerification, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendPasswordResetEmail } from "firebase/auth";
 
 
 initializeAuthentication()
@@ -12,6 +12,7 @@ const useFirebase = () => {
     const [errorMsg, setErrorMsg] = useState("")
     const [isLoading, setIsLoading] = useState(true)
 
+    // Google Login Firebase ...
     const signInUsingGoogle = () => {
         setIsLoading(true)
         const googleProvider = new GoogleAuthProvider();
@@ -33,8 +34,17 @@ const useFirebase = () => {
 
     }, [])
 
+
+    // Custom Login process ...
+    const customSignInProcess = (email, password) => {
+        setIsLoading(true)
+        return signInWithEmailAndPassword(auth, email, password)
+        
+    }
+
     // Custom registration process ...
     const handleCustomRegistration = (fullName, email, password) => {
+        setIsLoading(true)
         if(password.length < 6) {
             setErrorMsg("Password should be at leasts 6 character's")
             return;
@@ -73,13 +83,6 @@ const useFirebase = () => {
         })
     }
 
-
-    // Custom Login process ...
-    const customSignInProcess = (email, password) => {
-        setIsLoading(true)
-        return signInWithEmailAndPassword(auth, email, password)
-        
-    }
 
     // Password reset link send to email addresses ...
     const forgotPassword = (email) => {
