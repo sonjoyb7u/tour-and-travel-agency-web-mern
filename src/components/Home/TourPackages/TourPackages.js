@@ -9,7 +9,7 @@ const TourPackages = () => {
     const [tourPackages, setTourPackages] = useState([]);
 
     useEffect(() => {
-        const url = "http://localhost:5001/all-tour-packages";
+        const url = "https://limitless-hollows-79049.herokuapp.com/all-tour-packages";
 
         fetch(url)
         .then((res) => res.json())
