@@ -44,7 +44,7 @@ const useFirebase = () => {
 
     // Custom registration process ...
     const handleCustomRegistration = (fullName, email, password) => {
-        setIsLoading(true)
+        // setIsLoading(true)
         if(password.length < 6) {
             setErrorMsg("Password should be at leasts 6 character's")
             return;

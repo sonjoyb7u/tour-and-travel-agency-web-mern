@@ -9,8 +9,11 @@ const Add = () => {
     const generateKey = `${Math.ceil(Math.random(9999))}_${ new Date().getTime() }`;
 
     const onSubmit = (data) => {
+        // const url = `https://limitless-hollows-79049.herokuapp.com/tour-package/create;
         const url = "https://limitless-hollows-79049.herokuapp.com/tour-package/create"
+
         data.key = generateKey
+
         fetch(url, {
             method: "POST",
             headers: { "content-type": "application/json" },
@@ -32,6 +35,8 @@ const Add = () => {
             console.log(err.message);
         })
     }
+
+
     return (
         <div className="add-form">
             <h2>Add Booking: </h2>

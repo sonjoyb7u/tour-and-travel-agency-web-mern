@@ -29,7 +29,7 @@ const TourPackage = ({tourPackage}) => {
                         <li><span><FontAwesomeIcon icon={faMountain} /></span>In {country}</li>
                     </ul> 
                     <div>
-                        <Link to="/order-booking"> 
+                        <Link to={`/order-booking/${_id}`}>
                             <Button className="book-btn">Book Dream</Button>
                         </Link>
                     </div>

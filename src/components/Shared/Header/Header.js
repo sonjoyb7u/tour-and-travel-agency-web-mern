@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import useAuth from '../../../Hooks/useAuth';
+import { useHistory, useLocation } from 'react-router';
 import './Header.css';
 import Logo1 from './../../../images/logo/logo.png';
 import Logo2 from './../../../images/logo/logo_2.png';
 import { Container, Image, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faSignOutAlt, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
-import useAuth from '../../../Hooks/useAuth';
 
 const Header = () => {
     // Scroll to add navbar background active css class ...
@@ -27,8 +28,9 @@ const Header = () => {
 
     const location = useLocation()
     // console.log(location.state?.from);
-    const redirect_url = location.state?.from || '/home'; 
+    // const redirect_url = location.state?.from || '/home'; 
     const history = useHistory()
+    const redirect_url = '/';
 
     const handleLogoutProcess = (e) => {
         e.preventDefault();

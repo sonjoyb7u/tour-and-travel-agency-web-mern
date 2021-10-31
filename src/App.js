@@ -15,6 +15,8 @@ import DashBoard from './components/Admin/Dashboard/DashBoard';
 import AuthDataProvider from './Contexts/AuthDataProvider';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 import OrderBookingReview from './components/OrderBookingReview/OrderBookingReview';
+import EditOrder from './components/Admin/TourPackage/EditOrder/EditOrder';
+import UserEditOrder from './components/Admin/TourPackage/MyOrder/EditOrder';
 
 function App() {
   return (
@@ -38,12 +40,18 @@ function App() {
             <Route exact path="/registration">
               <Registration></Registration>
             </Route>
-            <Route exact path="/order-booking">
+            <PrivateRoute exact path="/order-booking/:orderBookPackageId">
               <OrderBookingReview></OrderBookingReview>
-            </Route>
-            <Route exact path="/dashboard">
+            </PrivateRoute>
+            <PrivateRoute exact path="/dashboard">
               <DashBoard></DashBoard>
-            </Route>
+            </PrivateRoute>
+            <PrivateRoute exact path="/dashboard/booking-order/edit/:bookOrderId">
+              <EditOrder></EditOrder>
+            </PrivateRoute>
+            <PrivateRoute exact path="/dashboard/user-booking-order/edit/:bookOrderId">
+                <UserEditOrder></UserEditOrder>
+            </PrivateRoute>
             <Route path="*">
                 <Error404></Error404>
             </Route>

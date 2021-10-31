@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import {Link, useHistory, useLocation} from 'react-router-dom'
+import {Link} from 'react-router-dom'
+import {useHistory, useLocation} from 'react-router'
 import { Col, Container, Form, Row, Button, Image } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -15,7 +16,7 @@ const Registration = () => {
     const location = useLocation()
     // console.log(location.state?.from);
     const history = useHistory()
-    const redirect_url = location.state?.from || '/';
+    const redirect_url = location.state?.from || '/home';
 
     // Google Login Using Firebase ...
     const handleSingInUsingGoogle = () => {

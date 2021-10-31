@@ -9,8 +9,8 @@ const TourPackages = () => {
     const [tourPackages, setTourPackages] = useState([]);
 
     useEffect(() => {
+        // const url = `https://limitless-hollows-79049.herokuapp.com/all-tour-packages`;
         const url = "https://limitless-hollows-79049.herokuapp.com/all-tour-packages";
-
         fetch(url)
         .then((res) => res.json())
         .then((data) => setTourPackages(data.slice(0, 6)));
