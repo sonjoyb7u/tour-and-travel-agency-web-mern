@@ -1,14 +1,14 @@
 import React from 'react';
 import { Button, Col, Container, Row, ToggleButton } from 'react-bootstrap';
-import './DashBoard'
+import './DashBoard.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faList, faStore } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { useState } from 'react';
-import AddBook from '../Booking/AddBook/AddBook';
-import ManageBook from '../Booking/ManageBook/ManageBook';
-import Home from './Home/Home';
+import Home from '../Home/Home'
+import Add from '../TourPackage/Add/Add';
+import Manage from '../TourPackage/Manage/Manage';
 
 library.add(fab);
 
@@ -37,8 +37,8 @@ const DashBoard = () => {
                                 {/* BOKKING CRUD COMPONENT GOES HERE ...  */}
                                 <div className="m-4">
                                     {control == "home" && <Home></Home>}
-                                    {control == "addBooking" && <AddBook></AddBook>}
-                                    {control == "manageAllBooking" && <ManageBook></ManageBook>}
+                                    {control == "addBooking" && <Add></Add>}
+                                    {control == "manageAllBooking" && <Manage></Manage>}
                                 </div>
                             </div>
                         </Col>

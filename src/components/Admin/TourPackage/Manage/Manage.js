@@ -1,7 +1,7 @@
 import React from 'react';
-import './ManageBook'
+import './Manage'
 
-const ManageBook = () => {
+const Manage = () => {
     return (
         <div>
             <h2>Manage Booking List ...</h2>
@@ -9,4 +9,4 @@ const ManageBook = () => {
     );
 };
 
-export default ManageBook;
+export default Manage;

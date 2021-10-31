@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import './Contact'
+import './Contact.css';
 
 const Contact = () => {
 
@@ -16,19 +16,19 @@ const Contact = () => {
                             <h2>Contact Form: </h2>
                             <form action="#" className="bg-light p-5 contact-form">
                                 <div className="form-group mb-3">
-                                    <input  style={{ outline: "none", border: "1px solid #fa5624" }} type="text" className="form-control" placeholder="Your Name" />
+                                    <input  type="text" className="form-control" placeholder="Your Name" />
                                 </div>
                                 <div className="form-group mb-3">
-                                    <input  style={{ outline: "none", border: "1px solid #fa5624" }} type="text" className="form-control" placeholder="Your Email" />
+                                    <input type="text" className="form-control" placeholder="Your Email" />
                                 </div>
                                 <div className="form-group mb-3">
-                                    <input  style={{ outline: "none", border: "1px solid #fa5624" }} type="text" className="form-control" placeholder="Subject" />
+                                    <input type="text" className="form-control" placeholder="Subject" />
                                 </div>
                                 <div className="form-group mb-3">
-                                    <textarea  style={{ outline: "none", border: "1px solid #fa5624" }} name="" id="" cols="30" rows="7" className="form-control" placeholder="Message"></textarea>
+                                    <textarea name="" id="" cols="30" rows="7" className="form-control" placeholder="Message"></textarea>
                                 </div>
-                                <div className="search-btn">
-                                    <Button style={{ minWidth: "180px", backgroundColor: "#fa5624",border: "transparent", outline: "none", padding: "15px 30px" }} className="contact-btn" type="submit">Submit</Button>
+                                <div className="contact-btn">
+                                    <Button type="submit">Submit</Button>
                                 </div>
                             </form>
                         </div>

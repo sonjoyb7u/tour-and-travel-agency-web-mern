@@ -1,5 +1,5 @@
 import React from 'react';
-import './Login'
+import './Login.css'
 import {Link} from 'react-router-dom';
 import { Col, Container, Form, Row, Button, Image, NavLink } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -50,7 +50,7 @@ const Login = () => {
                                         <Col sm="8">
                                         Forgot Password?&nbsp;
                                         <span className="d-inline-block">
-                                            <Link> Click Here</Link>
+                                            <Link to=""> Click Here</Link>
                                         </span>
                                         </Col>
                                     </Form.Group>

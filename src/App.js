@@ -12,37 +12,45 @@ import Error404 from './components/ErrorPage/Error404/Error404';
 import Login from './components/Login/Login/Login';
 import Registration from './components/Registration/Registration';
 import DashBoard from './components/Admin/Dashboard/DashBoard';
+import AuthDataProvider from './Contexts/AuthDataProvider';
+import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
+import OrderBookingReview from './components/OrderBookingReview/OrderBookingReview';
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Header></Header>
-        <Switch>
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
-          <Route exact path="/home">
-            <Home></Home>
-          </Route>
-          <Route exact path="/contact">
-            <Contact></Contact>
-          </Route>
-          <Route exact path="/login">
-            <Login></Login>
-          </Route>
-          <Route exact path="/registration">
-            <Registration></Registration>
-          </Route>
-          <Route exact path="/dashboard">
-            <DashBoard></DashBoard>
-          </Route>
-          <Route path="*">
-              <Error404></Error404>
-          </Route>
-        </Switch>
-        <Footer></Footer>
-      </Router>
+      <AuthDataProvider>
+        <Router>
+          <Header></Header>
+          <Switch>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route exact path="/home">
+              <Home></Home>
+            </Route>
+            <Route exact path="/contact">
+              <Contact></Contact>
+            </Route>
+            <Route exact path="/login">
+              <Login></Login>
+            </Route>
+            <Route exact path="/registration">
+              <Registration></Registration>
+            </Route>
+            <Route exact path="/order-booking">
+              <OrderBookingReview></OrderBookingReview>
+            </Route>
+            <Route exact path="/dashboard">
+              <DashBoard></DashBoard>
+            </Route>
+            <Route path="*">
+                <Error404></Error404>
+            </Route>
+          </Switch>
+          <Footer></Footer>
+        </Router>
+      </AuthDataProvider>
     </div>
   );
 }

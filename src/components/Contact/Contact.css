@@ -1,5 +1,17 @@
-.contact-btn {
-  background-color: #fa5624 !important;
+/* CONTACT FORM STYLE CSS ...  */
+.contact-section .google-map {
+  border-radius: 10px;
+}
+.contact-form input {
+  outline: none;
+  border: 1px solid #fa5624;
+}
+.contact-form textarea {
+  outline: none;
+  border: 1px solid #fa5624;
+}
+.contact-btn button {
+  background-color: #fa5624;
   color: #fff;
   display: inline-block;
   padding: 13px 39px;

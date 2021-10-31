@@ -4,7 +4,7 @@ import { Col, Container, Form, Row, Button, Image } from 'react-bootstrap';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { library } from '@fortawesome/fontawesome-svg-core';
 // import { fab } from '@fortawesome/free-brands-svg-icons';
-import './Registration';
+import './Registration.css';
 
 // library.add(fab);
 
