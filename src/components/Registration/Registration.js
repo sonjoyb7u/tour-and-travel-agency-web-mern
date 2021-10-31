@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import {Link} from 'react-router-dom'
-import {useHistory, useLocation} from 'react-router'
+import {Link, useHistory, useLocation} from 'react-router-dom'
 import { Col, Container, Form, Row, Button, Image } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';

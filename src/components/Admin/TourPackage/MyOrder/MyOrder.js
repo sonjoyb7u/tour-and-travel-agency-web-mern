@@ -88,9 +88,9 @@ const MyOrder = () => {
                                         
                                             <td>
                                                 {/* <Button className="m-1 text-light btn-sm" variant="primary" size="sm">View</Button> */}
-                                                <Link to={`/dashboard/user-booking-order/edit/${myOrder?._id}`}>
+                                                {/* <Link to={`/dashboard/user-booking-order/edit/${myOrder?._id}`}>
                                                     <Button className="m-1 text-light btn-sm" variant="info" size="sm">Edit</Button>
-                                                </Link>
+                                                </Link> */}
                                                 <Button onClick={() => handleDelete(myOrder._id)} className="m-1 text-light btn-sm" variant="danger" size="sm">Delete</Button>
                                             </td>
                                         </tr> 

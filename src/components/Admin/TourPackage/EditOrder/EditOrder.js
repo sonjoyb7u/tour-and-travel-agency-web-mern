@@ -20,17 +20,19 @@ const EditOrder = () => {
 
     // console.log(bookOrderId);
 
-    const { register, handleSubmit, formState: { errors }, reset } = useForm();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm({});
 
     const onSubmit = (data) => {
-        // data.key = bookOrderDetail?.key;
-        // data.placeName = bookOrderDetail?.place_name;
-        // data.imgUrl = bookOrderDetail?.image;
-        // data.perPersonPrice = bookOrderDetail?.per_person_price;
-        // data.familyPackPrice = bookOrderDetail?.family_Package_price;
-        // data.location = bookOrderDetail?.location;
-        // data.country = bookOrderDetail?.country;
-        // data.orderStatus = "pending";
+        data.name = bookOrderDetail?.name;
+        data.email = bookOrderDetail?.email;
+        data.key = bookOrderDetail?.key;
+        data.placeName = bookOrderDetail?.place_name;
+        data.imgUrl = bookOrderDetail?.image;
+        data.perPersonPrice = bookOrderDetail?.per_person_price;
+        data.familyPackPrice = bookOrderDetail?.family_Package_price;
+        data.location = bookOrderDetail?.location;
+        data.country = bookOrderDetail?.country;
+        data.orderStatus = "pending";
 
         // const url = `https://limitless-hollows-79049.herokuapp.com/tour-package/booking-order/update;
         const url = `https://limitless-hollows-79049.herokuapp.com/booking-order/update/${bookOrderId}`
@@ -73,15 +75,15 @@ const EditOrder = () => {
                                 {/* {errors.email && <span className="error">This field is required!</span>} */}
                             </div>
                             <div className="form-group mb-3">
-                                <input placeholder="Enter Address" defaultValue={bookOrderDetail?.shipping_address} {...register("shipping_address", {required: true})} type="text" className="form-control" />
+                                <input placeholder="Enter Address" defaultValue={bookOrderDetail.shipping_address} {...register("shipping_address", {required: true})} type="text" className="form-control" />
                                 {/* {errors.shipping_address && <span className="error">This field is required!</span>} */}
                             </div>
                             <div className="form-group mb-3">
-                                <input placeholder="Enter City" defaultValue={bookOrderDetail?.city} {...register("city")} type="text" className="form-control" />
+                                <input placeholder="Enter City" defaultValue={bookOrderDetail.city} {...register("city")} type="text" className="form-control" />
                                 {/* {errors.city && <span className="error">This field is required!</span>} */}
                             </div>
                             <div className="form-group mb-3">
-                                <input placeholder="Enter Phone number" defaultValue={bookOrderDetail?.phone} {...register("phone", {required: true})} type="text" className="form-control" />
+                                <input placeholder="Enter Phone number" defaultValue={bookOrderDetail.phone} {...register("phone", {required: true})} type="text" className="form-control" />
                                 {/* {errors.phone && <span className="error">This field is required!</span>} */}
                             </div>
 
