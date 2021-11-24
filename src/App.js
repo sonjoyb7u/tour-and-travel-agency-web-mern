@@ -43,12 +43,12 @@ function App() {
             <PrivateRoute exact path="/order-booking/:orderBookPackageId">
               <OrderBookingReview></OrderBookingReview>
             </PrivateRoute>
-            <PrivateRoute exact path="/dashboard">
+            <Route exact path="/dashboard">
               <DashBoard></DashBoard>
-            </PrivateRoute>
-            <PrivateRoute exact path="/dashboard/booking-order/edit/:bookOrderId">
+            </Route>
+            <Route exact path="/dashboard/booking-order/edit/:bookOrderId">
               <EditOrder></EditOrder>
-            </PrivateRoute>
+            </Route>
             <PrivateRoute exact path="/dashboard/user-booking-order/edit/:bookOrderId">
                 <UserEditOrder></UserEditOrder>
             </PrivateRoute>

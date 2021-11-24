@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faSignOutAlt, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
+    const {signOutUsingGoogle, user, setUser, setSuccessMsg, successMsg, setErrorMsg, errorMsg, setIsLoading} = useAuth()
     // Scroll to add navbar background active css class ...
     const [navbarBg, setNavbarBg] = useState(false)
     const changeNavbarBackground = () => {
@@ -24,7 +25,6 @@ const Header = () => {
     }
     window.addEventListener('scroll', changeNavbarBackground)
 
-    const {signOutUsingGoogle, user, setUser, setSuccessMsg, successMsg, setErrorMsg, errorMsg, setIsLoading} = useAuth()
 
     const location = useLocation()
     // console.log(location.state?.from);

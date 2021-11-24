@@ -35,3 +35,7 @@
 .form-group {
   margin-bottom: 1 rem;
 }
+
+.error {
+  color: #fa5624;
+}

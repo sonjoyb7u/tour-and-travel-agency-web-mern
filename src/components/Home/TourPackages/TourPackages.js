@@ -10,12 +10,15 @@ const TourPackages = () => {
 
     useEffect(() => {
         // const url = `https://limitless-hollows-79049.herokuapp.com/all-tour-packages`;
+        // const url = "http://localhost:5002/all-tour-packages";
         const url = "https://limitless-hollows-79049.herokuapp.com/all-tour-packages";
         fetch(url)
         .then((res) => res.json())
         .then((data) => setTourPackages(data.slice(0, 6)));
 
     }, []);
+
+    // console.log(tourPackages);
 
     return (
         <section className="book-tour-section" id="tour-package">

@@ -1,47 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Table, Button, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import './ManageOrders.css'
 
-const ManageOrders = () => {
-    const [bookOrders, setAllBookingOrders] = useState([])
-
-    useEffect(() => {
-        const url = `https://limitless-hollows-79049.herokuapp.com/all-booking-orders`;
-        fetch(url)
-        .then(res => res.json())
-        .then(result => setAllBookingOrders(result))
-
-    }, [])
-
-    // console.log(bookOrders);
-
-    // Delete Booking Order ... 
-    const handleDelete = (id) => {
-        const confirmDelete = window.confirm("Are you sure want to delete this order?")
-        if(confirmDelete) {
-            const url = `https://limitless-hollows-79049.herokuapp.com/booking-order/delete/${id}`;
-            fetch(url, {
-                method: "DELETE",
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            })
-            .then(res => res.json())
-            .then(result => {
-                if(result.deletedCount > 0) {
-                    alert("Booking Order has been Deleted Success...");
-                    const restServices = bookOrders.filter(service => service._id != id)
-                    setAllBookingOrders(restServices)
-                }
-                else {
-                    alert("Booking Order Deleted Failed!!!");
-                }
-            })
-        }
-            
-    }
-
+const ManageOrders = (props) => {
+    const allBookingOrders = props.allBookingOrders;
+    const handleEditOrder = props.handleEditOrder;
+    const handleDeletedOrder = props.handleDeletedOrder
 
     return (
         <div className="all-book-orders">
@@ -69,30 +36,36 @@ const ManageOrders = () => {
                             </thead>
                             <tbody>
                                 {
-                                    bookOrders.map((bookOrder, index) => 
-                                        <tr key={bookOrder?._id}>
+                                    allBookingOrders?.length 
+                                    ?
+                                    allBookingOrders?.map((bookingOrder, index) => 
+                                        <tr key={bookingOrder?._id}>
                                             <td>{index + 1}</td>
-                                            <td>{bookOrder?.name}</td>
-                                            <td>{bookOrder?.email}</td>
-                                            <td>{bookOrder?.phone}</td>
-                                            <td>{bookOrder?.shipping_address}, {bookOrder?.city}</td>
-                                            <td>{bookOrder?.placeName}</td>
+                                            <td>{bookingOrder?.name}</td>
+                                            <td>{bookingOrder?.email}</td>
+                                            <td>{bookingOrder?.phone}</td>
+                                            <td>{bookingOrder?.shipping_address}, {bookingOrder?.city}</td>
+                                            <td>{bookingOrder?.placeName}</td>
                                             <td>
-                                                <Image width="75" src={bookOrder?.imgUrl}></Image>
+                                                <Image width="75" src={bookingOrder?.imgUrl}></Image>
                                             </td>
-                                            <td>{bookOrder?.perPersonPrice}</td>
-                                            <td>{bookOrder?.familyPackPrice}</td>
-                                            <td>{bookOrder?.orderStatus}</td>
+                                            <td>{bookingOrder?.perPersonPrice}</td>
+                                            <td>{bookingOrder?.familyPackPrice}</td>
+                                            <td>{bookingOrder?.orderStatus}</td>
                                         
-                                            <td>
+                                            <td className="d-flex">
                                                 {/* <Button className="m-1 text-light btn-sm" variant="primary" size="sm">View</Button> */}
-                                                <Link to={`/dashboard/booking-order/edit/${bookOrder?._id}`}>
-                                                    <Button className="m-1 text-light btn-sm" variant="info" size="sm">Edit</Button>
-                                                </Link>
-                                                <Button onClick={() => handleDelete(bookOrder._id)} className="m-1 text-light btn-sm" variant="danger" size="sm">Delete</Button>
+                                                {/* <Link to={`/dashboard/booking-order/edit/${bookOrder?._id}`}> */}
+                                                    <Button onClick={() => handleEditOrder(bookingOrder?._id)} className="m-1 text-light btn-sm" variant="info" size="sm"><FontAwesomeIcon icon={faEdit} /></Button>
+                                                {/* </Link> */}
+                                                <Button onClick={() => handleDeletedOrder(bookingOrder?._id)} className="m-1 text-light btn-sm" variant="danger" size="sm"><FontAwesomeIcon icon={faTrash} /></Button>
                                             </td>
                                         </tr> 
                                     )
+                                    : 
+                                    <tr>
+                                        <td colSpan="11">No Orders Found!!!</td>
+                                    </tr>
 
                                 }
                                 

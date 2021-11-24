@@ -20,8 +20,8 @@ const useFirebase = () => {
     }
 
     useEffect( () => {
-        setIsLoading(true)
-        onAuthStateChanged(auth, (user) => {
+        setIsLoading(true);
+        const unSubscribed = onAuthStateChanged(auth, (user) => {
             if(user) {
                 // console.log(user);
                 setUser(user)
@@ -30,7 +30,9 @@ const useFirebase = () => {
                 setUser({})
             }
             setIsLoading(false)
-        })
+        });
+
+        return () => unSubscribed;
 
     }, [])
 

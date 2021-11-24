@@ -5,6 +5,7 @@ import './Footer.css'
 import { NavLink } from 'react-bootstrap';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
+import { Link } from 'react-router-dom';
 library.add(fab);
 
 const Footer = () => {
@@ -19,25 +20,25 @@ const Footer = () => {
                             </p>
                             <ul className="footer-social list-unstyled">
                                 <li className="">
-                                    <a href="#">
+                                    <Link to="#">
                                         <span>
                                             <FontAwesomeIcon className="social-icon" icon={['fab', 'facebook']} /> 
                                         </span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="">
-                                    <a href="#">
+                                    <Link to="#">
                                         <span>
                                             <FontAwesomeIcon className="social-icon" icon={['fab', 'twitter']} />
                                         </span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="">
-                                    <a href="#">
+                                    <Link to="#">
                                         <span>
                                             <FontAwesomeIcon className="social-icon" icon={['fab', 'instagram']} />
                                         </span>
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -46,12 +47,12 @@ const Footer = () => {
                         <div className="footer-info pt-md-5 mb-4 ml-md-5">
                         <h2 className="footer-heading mb-4">Information</h2>
                             <ul className="list-unstyled">
-                                <li><a href="#" className="py-2 d-block">Online Enquiry</a></li>
-                                <li><a href="#" className="py-2 d-block">General Enquiries</a></li>
-                                <li><a href="#" className="py-2 d-block">Booking Conditions</a></li>
-                                <li><a href="#" className="py-2 d-block">Privacy and Policy</a></li>
-                                <li><a href="#" className="py-2 d-block">Refund Policy</a></li>
-                                <li><a href="#" className="py-2 d-block">Call Us</a></li>
+                                <li><Link to="#" className="py-2 d-block">Online Enquiry</Link></li>
+                                <li><Link to="#" className="py-2 d-block">General Enquiries</Link></li>
+                                <li><Link to="#" className="py-2 d-block">Booking Conditions</Link></li>
+                                <li><Link to="#" className="py-2 d-block">Privacy and Policy</Link></li>
+                                <li><Link to="#" className="py-2 d-block">Refund Policy</Link></li>
+                                <li><Link to="#" className="py-2 d-block">Call Us</Link></li>
                             </ul>
                         </div>
                     </div>
@@ -59,12 +60,12 @@ const Footer = () => {
                         <div className="footer-info pt-md-5 mb-4">
                         <h2 className="footer-heading mb-4">Experience</h2>
                             <ul className="list-unstyled">
-                                <li><a href="#" className="py-2 d-block">Adventure</a></li>
-                                <li><a href="#" className="py-2 d-block">Hotel and Restaurant</a></li>
-                                <li><a href="#" className="py-2 d-block">Beach</a></li>
-                                <li><a href="#" className="py-2 d-block">Nature</a></li>
-                                <li><a href="#" className="py-2 d-block">Camping</a></li>
-                                <li><a href="#" className="py-2 d-block">Party</a></li>
+                                <li><Link to="#" className="py-2 d-block">Adventure</Link></li>
+                                <li><Link to="#" className="py-2 d-block">Hotel and Restaurant</Link></li>
+                                <li><Link to="#" className="py-2 d-block">Beach</Link></li>
+                                <li><Link to="#" className="py-2 d-block">Nature</Link></li>
+                                <li><Link to="#" className="py-2 d-block">Camping</Link></li>
+                                <li><Link to="#" className="py-2 d-block">Party</Link></li>
                             </ul>
                         </div>
                     </div>

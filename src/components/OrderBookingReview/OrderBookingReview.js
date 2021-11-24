@@ -96,7 +96,7 @@ const OrderBookingReview = () => {
                                         <input defaultValue={user.displayName} {...register("name")}type="text" className="form-control" />
                                     </div>
                                     <div className="form-group mb-3">
-                                        <input defaultValue={user.email} {...register("email", { required: true })} type="text" className="form-control" />
+                                        <input defaultValue={user.email} {...register("email", { required: true })} type="email" className="form-control" />
                                         {errors.email && <span className="error">This field is required!</span>}
                                     </div>
                                     <div className="form-group mb-3">

@@ -1,25 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Table, Button, Image } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import useAuth from '../../../../Hooks/useAuth';
 import './MyOrder.css'
 
 const MyOrder = () => {
-    const [allMyOrders, setAllMyOrders] = useState([])
+    const [allMyBookingOrders, setAllMyBookingOrders] = useState([])
     const {user} = useAuth();
 
     useEffect(() => {
-        const url = `https://limitless-hollows-79049.herokuapp.com/user-booking-order/${user.email}`;
+        const url = `https://limitless-hollows-79049.herokuapp.com/user-booking-order/${user?.email}`;
         fetch(url)
         .then(res => res.json())
-        .then(result => setAllMyOrders(result))
+        .then(result => setAllMyBookingOrders(result))
 
     }, [])
 
     // console.log(bookOrders);
 
     // Delete Booking Order ... 
-    const handleDelete = (id) => {
+    const handleMyBookingOrderDelete = (id) => {
         const confirmDelete = window.confirm("Are you sure want to delete this order?")
         if(confirmDelete) {
             const url = `https://limitless-hollows-79049.herokuapp.com/user-booking-order/delete/${id}`;
@@ -33,8 +35,8 @@ const MyOrder = () => {
             .then(result => {
                 if(result.deletedCount > 0) {
                     alert("Booking Order has been Deleted Success...");
-                    const restServices = allMyOrders.filter(myOrder => myOrder._id != id)
-                    setAllMyOrders(restServices)
+                    const restServices = allMyBookingOrders.filter(myOrder => myOrder._id != id)
+                    setAllMyBookingOrders(restServices)
                 }
                 else {
                     alert("Booking Order Deleted Failed!!!");
@@ -71,7 +73,9 @@ const MyOrder = () => {
                             </thead>
                             <tbody>
                                 {
-                                    allMyOrders.map((myOrder, index) => 
+                                    (allMyBookingOrders?.length > 0) 
+                                    ?
+                                    allMyBookingOrders?.map((myOrder, index) => 
                                         <tr key={myOrder?._id}>
                                             <td>{index + 1}</td>
                                             <td>{myOrder?.name}</td>
@@ -91,10 +95,15 @@ const MyOrder = () => {
                                                 {/* <Link to={`/dashboard/user-booking-order/edit/${myOrder?._id}`}>
                                                     <Button className="m-1 text-light btn-sm" variant="info" size="sm">Edit</Button>
                                                 </Link> */}
-                                                <Button onClick={() => handleDelete(myOrder._id)} className="m-1 text-light btn-sm" variant="danger" size="sm">Delete</Button>
+                                                <Button onClick={() => handleMyBookingOrderDelete(myOrder?._id)} className="m-1 text-light btn-sm" variant="danger" size="sm"><FontAwesomeIcon icon={faTrash} /></Button>
                                             </td>
                                         </tr> 
                                     )
+                                    : 
+                                    <tr>
+                                        <td colSpan="11">No Order Found!!!</td>
+                                    </tr>
+                                    
 
                                 }
                                 

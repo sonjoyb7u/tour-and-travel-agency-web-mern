@@ -12,9 +12,9 @@ library.add(fab);
 const Registration = () => {
     const {signInUsingGoogle, setUser, handleCustomRegistration, setUserFullName, sendLinkToEmailForVerify, successMsg, setSuccessMsg, setErrorMsg, errorMsg, setIsLoading} = useAuth()
 
+    const history = useHistory()
     const location = useLocation()
     // console.log(location.state?.from);
-    const history = useHistory()
     const redirect_url = location.state?.from || '/home';
 
     // Google Login Using Firebase ...

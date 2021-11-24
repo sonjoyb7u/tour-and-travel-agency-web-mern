@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Login.css'
 import { Link, useHistory, useLocation } from 'react-router-dom';
-import { Col, Container, Form, Row, Button, Image, NavLink } from 'react-bootstrap';
+import { Col, Container, Form, Row, Button, Image, NavLink, Spinner } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -13,9 +13,9 @@ const Login = () => {
     // const {signInUsingGoogle, user, errorMsg} = useFirebase() // 1st option
     const {signInUsingGoogle, customSignInProcess, user, setUser, setIsLoading, successMsg, setSuccessMsg, errorMsg, setErrorMsg, forgotPassword} = useAuth() // 2nd option
 
+    const history = useHistory()
     const location = useLocation()
     // console.log(location.state?.from);
-    const history = useHistory()
     const redirect_url = location.state?.from || '/home'; 
 
     // Google Login Using Firebase ...
